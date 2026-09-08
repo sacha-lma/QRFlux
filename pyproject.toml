@@ -1,0 +1,34 @@
+[project]
+name = "qrflux"
+version = "0.1.0"
+description = "File transfer between two devices via a QR code stream on screen."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "poethepoet>=0.29",
+    "pytest>=8",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["Tests"]
+pythonpath = ["Src"]
+
+# --- Task runner (Makefile-style, cross-platform) -------------------------
+# Usage: uv run poe <task>
+[tool.poe.tasks.run]
+help = "Run the application (Src/main.py)"
+cmd = "python Src/main.py"
+
+[tool.poe.tasks.test-run]
+help = "Run the test suite"
+cmd = "pytest"
+
+[tool.poe.tasks.clean]
+help = "Remove Python caches and build artifacts"
+script = "tasks:clean"
