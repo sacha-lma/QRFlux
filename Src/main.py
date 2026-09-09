@@ -63,7 +63,14 @@ def encrypt_data(data: list[int]) -> list[int]:
     # For demonstration, we'll just return the data as is
     return data
 
-#def generate_qr_matrix(data: list[int]) -> list[list[int]]:
+def generate_qr_matrix(data: list[int], NbSlots: int) -> list[list[int]]:
+    matrix = initialize_matrix(NbSlots)
+    matrix = place_orientation_patterns(matrix, NbSlots)
+    matrix = size_patterns(matrix, NbSlots)
+    return matrix
+
+def initialize_matrix(NbSlots: int) -> list[list[int]]:
+    return [[0 for _ in range(NbSlots)] for _ in range(NbSlots)]
 
 
 def size_patterns(matrix: list[list[int]], NbSlots: int) -> list[list[int]]:
