@@ -8,8 +8,8 @@ def main() -> None:
     ModuleSize, NbSlots, RequestedSentence = get_user_input()
     Win, canvas= initialize_Window(NbSlots, ModuleSize)
 
-    #generated_matrix = generate_qr_matrix(converted_data = convert_to_binary(RequestedSentence))
-    #draw_qr_code(generated_matrix, canvas, NbSlots, ModuleSize)
+    generated_matrix = generate_qr_matrix(convert_to_binary(RequestedSentence), NbSlots)
+    draw_qr_code(generated_matrix, canvas, NbSlots, ModuleSize)
 
     Win.mainloop()
 
