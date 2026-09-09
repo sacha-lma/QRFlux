@@ -71,5 +71,20 @@ def size_patterns(matrix: list[list[int]], NbSlots: int) -> list[list[int]]:
         matrix[i][3] = 1
     return matrix
 
+def place_orientation_patterns(matrix: list[list[int]], NbSlots: int) -> list[list[int]]:
+    matrix[NbSlots - 4][NbSlots - 4] = 1
+    matrix[NbSlots - 5][NbSlots - 4] = 1
+    matrix[NbSlots - 5][NbSlots - 5] = 1
+    matrix[NbSlots - 6][NbSlots - 4] = 1
+    matrix[NbSlots - 8][NbSlots - 4] = 1
+    matrix[NbSlots - 8][NbSlots - 5] = 1
+    matrix[NbSlots - 8][NbSlots - 6] = 1
+    matrix[NbSlots - 8][NbSlots - 7] = 1
+    matrix[NbSlots - 7][NbSlots - 7] = 1
+    matrix[NbSlots - 6][NbSlots - 7] = 1
+    matrix[NbSlots - 5][NbSlots - 7] = 1
+    matrix[NbSlots - 4][NbSlots - 7] = 1
+    return matrix
+
 if __name__ == "__main__":
     main()
