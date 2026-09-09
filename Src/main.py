@@ -6,7 +6,7 @@ import tkinter as tk
 def main() -> None:
 
     ModuleSize, NbSlots, RequestedSentence = get_user_input()
-    Win = initialize_Window(NbSlots, ModuleSize)
+    Win, canvas= initialize_Window(NbSlots, ModuleSize)
 
     #generated_matrix = generate_qr_matrix(converted_data = convert_to_binary(RequestedSentence))
     #draw_qr_code(generated_matrix, canvas, NbSlots, ModuleSize)
@@ -38,7 +38,7 @@ def initialize_Window(NbSlots: int, ModuleSize: int) -> tk.Tk:
     canvas = tk.Canvas(Win, width=NbSlots * ModuleSize, height=NbSlots * ModuleSize, bg="white")
     canvas.pack()
 
-    return Win
+    return Win, canvas
 
 def draw_qr_code(matrix: list[list[int]], canvas: tk.Canvas, NbSlots: int, ModuleSize: int) -> None:
     canvas.delete("all")
