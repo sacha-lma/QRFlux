@@ -40,6 +40,17 @@ def initialize_Window(NbSlots: int, ModuleSize: int) -> tk.Tk:
 
     return Win
 
+def draw_qr_code(matrix: list[list[int]], canvas: tk.Canvas, NbSlots: int, ModuleSize: int) -> None:
+    canvas.delete("all")
+    for row in range(NbSlots):
+        for col in range(NbSlots):
+            if matrix[row][col] == 1:
+                x0 = col * ModuleSize
+                y0 = row * ModuleSize
+                x1 = x0 + ModuleSize
+                y1 = y0 + ModuleSize
+                canvas.create_rectangle(x0, y0, x1, y1, fill="black", outline="black")
+
 #def generate_qr_matrix(data: list[int]) -> list[list[int]]:
 
 
