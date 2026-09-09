@@ -51,6 +51,13 @@ def draw_qr_code(matrix: list[list[int]], canvas: tk.Canvas, NbSlots: int, Modul
                 y1 = y0 + ModuleSize
                 canvas.create_rectangle(x0, y0, x1, y1, fill="black", outline="black")
 
+def convert_to_binary(data: str) -> list[int]:
+    binary_data = []
+    for char in data:
+        binary_char = format(ord(char), '08b')  # Convert character to 8-bit binary
+        binary_data.append(int(binary_char, 2))  # Convert binary string to integer
+    return binary_data
+
 #def generate_qr_matrix(data: list[int]) -> list[list[int]]:
 
 
