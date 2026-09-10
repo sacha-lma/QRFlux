@@ -31,4 +31,4 @@ cmd = "pytest"
 
 [tool.poe.tasks.clean]
 help = "Remove Python caches and build artifacts"
-script = "tasks:clean"
+script = "Tasks:Clean"
