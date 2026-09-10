@@ -18,12 +18,15 @@ package = false
 [tool.pytest.ini_options]
 testpaths = ["Tests"]
 pythonpath = ["Src"]
+python_files = ["Test*.py"]
+python_functions = ["Test*"]
+python_classes = ["Test*"]
 
 # --- Task runner (Makefile-style, cross-platform) -------------------------
 # Usage: uv run poe <task>
 [tool.poe.tasks.run]
-help = "Run the application (Src/main.py)"
-cmd = "python Src/main.py"
+help = "Run the application (Src/Main.py)"
+cmd = "python Src/Main.py"
 
 [tool.poe.tasks.test-run]
 help = "Run the test suite"
@@ -31,4 +34,4 @@ cmd = "pytest"
 
 [tool.poe.tasks.clean]
 help = "Remove Python caches and build artifacts"
-script = "tasks:clean"
+script = "Tasks:Clean"
