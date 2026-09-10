@@ -1,5 +1,3 @@
-"""Utility tasks invoked by poethepoet (works on Windows/macOS/Linux)."""
-
 from __future__ import annotations
 
 import shutil
