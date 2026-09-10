@@ -22,10 +22,8 @@ def TestEmptyMatrixIsSquareAndZeroed():
 
 def TestBuildMatrixPlacesTheFixedPatterns():
     Grid = BuildMatrix(TextToBytes("hello"), 41)
-    # timing line runs down column 3
     assert Grid[3][3] == 1
     assert Grid[5][3] == 1
-    # finder pattern sits near the bottom-right corner
     assert Grid[41 - 4][41 - 4] == 1
     assert Grid[41 - 8][41 - 7] == 1
 

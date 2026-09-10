@@ -1,19 +1,15 @@
-"""Fixed patterns written into the QR grid (timing line + finder pattern)."""
-
 from __future__ import annotations
 
 QRMatrix = list[list[int]]
 
 
 def PlaceTimingPattern(Matrix: QRMatrix, SlotCount: int) -> QRMatrix:
-    """Draw the alternating timing line down column 3."""
     for Row in range(3, SlotCount - 3, 2):
         Matrix[Row][3] = 1
     return Matrix
 
 
 def PlaceFinderPattern(Matrix: QRMatrix, SlotCount: int) -> QRMatrix:
-    """Draw the orientation finder pattern near the bottom-right corner."""
     Matrix[SlotCount - 4][SlotCount - 4] = 1
     Matrix[SlotCount - 5][SlotCount - 4] = 1
     Matrix[SlotCount - 5][SlotCount - 5] = 1

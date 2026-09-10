@@ -1,5 +1,3 @@
-"""Draw a QR matrix onto a Tk canvas, one square per set module."""
-
 from __future__ import annotations
 
 import tkinter as tk
@@ -9,7 +7,6 @@ from ..Matrix import QRMatrix
 
 
 def RenderMatrix(Matrix: QRMatrix, Canvas: tk.Canvas, Config: QRConfig) -> None:
-    """Clear ``Canvas`` and paint a black square for every ``1`` in ``Matrix``."""
     Canvas.delete("all")
     Size = Config.ModuleSize
     for Row in range(Config.SlotCount):

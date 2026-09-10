@@ -1,5 +1,3 @@
-"""Turn a sentence into the (encrypted) payload bytes placed in the matrix."""
-
 from __future__ import annotations
 
 from .Binary import TextToBytes
