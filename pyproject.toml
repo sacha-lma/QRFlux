@@ -18,6 +18,9 @@ package = false
 [tool.pytest.ini_options]
 testpaths = ["Tests"]
 pythonpath = ["Src"]
+python_files = ["Test*.py"]
+python_functions = ["Test*"]
+python_classes = ["Test*"]
 
 # --- Task runner (Makefile-style, cross-platform) -------------------------
 # Usage: uv run poe <task>
