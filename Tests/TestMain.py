@@ -1,11 +1,11 @@
 import QRFlux.App as App
 from QRFlux.Config import QRConfig
-from QRFlux.Encoding import Encrypt, TextToBytes
+from QRFlux.Encoding import Encrypt, TextToOctets
 from QRFlux.Matrix import BuildMatrix, EmptyMatrix
 
 
-def TestTextToBytesEncodesEachCharacter():
-    assert TextToBytes("QR") == [81, 82]
+def TestTextToOctetsEncodesEachCharacter():
+    assert TextToOctets("QR") == [81, 82]
 
 
 def TestEncryptIsCurrentlyAPassthroughCopy():
@@ -21,7 +21,7 @@ def TestEmptyMatrixIsSquareAndZeroed():
 
 
 def TestBuildMatrixPlacesTheFixedPatterns():
-    Grid = BuildMatrix(TextToBytes("hello"), 41)
+    Grid = BuildMatrix(TextToOctets("hello"), 41)
     assert Grid[3][3] == 1
     assert Grid[5][3] == 1
     assert Grid[41 - 4][41 - 4] == 1

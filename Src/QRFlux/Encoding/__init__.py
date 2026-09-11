@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from .Binary import TextToBytes
+from .Octet import TextToOctets
 from .Cipher import Encrypt
 
-__all__ = ["TextToBytes", "Encrypt"]
+__all__ = ["TextToOctets", "Encrypt"]
