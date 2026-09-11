@@ -10,7 +10,7 @@ def Run() -> None:
     Config = PromptConfig()
 
     Payload = Encrypt(TextToOctets(Config.Sentence))
-    Matrix = BuildMatrix(Payload, Config.SlotCount)
+    Matrix = BuildMatrix(Payload, Config)
 
     Window, Canvas = CreateWindow(Config)
     RenderMatrix(Matrix, Canvas, Config)
