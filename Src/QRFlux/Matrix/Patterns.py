@@ -23,3 +23,13 @@ def PlaceFinderPattern(Matrix: QRMatrix, SlotCount: int) -> QRMatrix:
     Matrix[SlotCount - 5][SlotCount - 7] = 1
     Matrix[SlotCount - 4][SlotCount - 7] = 1
     return Matrix
+
+
+def ReservedCells(SlotCount: int) -> set[tuple[int, int]]:
+    Reserved = set()
+    for Row in range(SlotCount - 8, SlotCount - 3):
+        for Col in range(SlotCount - 8, SlotCount - 3):
+            Reserved.add((Row, Col))
+    for Row in range(3, SlotCount - 3):
+        Reserved.add((Row, 3))
+    return Reserved
